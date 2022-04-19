@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import EventComponent from './event/EventComponent'
+import UserSearch from "./classes/UserSearch";
 
 
 const App = () =>{
@@ -7,7 +7,8 @@ const App = () =>{
         <div>
            {/* <GuestList/> */}
            {/* <UserSearch/> */}
-           <EventComponent/>
+           {/* <EventComponent/> */}
+           
         </div>
     )
 }
