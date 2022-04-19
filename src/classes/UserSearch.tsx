@@ -1,5 +1,4 @@
 import { Component } from "react";
-
 type User = {
   name: string;
   age: number;

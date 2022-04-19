@@ -1,12 +1,13 @@
 import ReactDOM from "react-dom";
-import UserSearch from "./classes/UserSearch";
+import UserSearch from "./state/UserSearch";
+
 
 
 const App = () =>{
     return(
         <div>
            {/* <GuestList/> */}
-           {/* <UserSearch/> */}
+           <UserSearch/>
            {/* <EventComponent/> */}
            
         </div>

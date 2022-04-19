@@ -1,27 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const users = [
-  { name: "Long", age: 20 },
-  { name: "Long Bi", age: 21 },
-  { name: "Long teo", age: 22 },
+  { name: "a", age: 20 },
+  { name: "b", age: 21 },
+  { name: "c", age: 22 },
 ];
 
 const UserSearch: React.FC = () => {
+  const textInput = useRef<HTMLInputElement | null>(null)
   const [name, setName] = useState("");
   const [user, setUser] = useState <{name: string, age: number} | undefined>()
   
+
+  useEffect(()=>{
+    if(!textInput.current){
+      return
+    }
+    textInput.current.focus()
+  },[])
   const handleOnClick = ()=>{
     const foundUser = users.find((user)=>{
         return user.name === name
     })
     setUser(foundUser);
+    setName('')
   }
 
   return (
     <div>
       <h1>User Search</h1>
 
-      <input value={name} onChange={(e) => setName(e.target.value)} />
+      <input ref={textInput} value={name} onChange={(e) => setName(e.target.value)} />
 
       <button onClick={handleOnClick}>Find user</button>
       <div>
